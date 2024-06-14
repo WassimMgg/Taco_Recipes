@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Taco Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <h1>Taco Town 🌮</h1>
+
+  <form action="/recipe" method="post" class="buttons">
+    <button type="submit" value="chicken" name="choice">🍗</button>
+    <button type="submit" value="beef" name="choice">🥩</button>
+    <button type="submit" value="fish" name="choice">🐟</button>
+  </form>
+  <div id="recipeContainer" class="hidden">
+
+   <% if(locals.name){%>
+    <h2><%= name %></h2>
+    <h3>Ingredients:</h3>
+    <ul id="ingredientsList">
+      <li><%=protein%>, <%=preparation%></li>
+      <li><%=salsa%></li>
+      <li><%=toppingsOneQuantity %> of <%=toppingsOne %></li>
+      <li><%=toppingsTwoQuantity %> of <%=toppingsTwo %></li>
+      <li><%=toppingsThreeQuantity %> of <%=toppingsThree %></li>
+    </ul>
+    
+    <% } else { %>
+      <h2>Pick your favourite taco ingredient 👆</h2>
+<% } %>
+
+  </div>
+</body>
+
+</html>
